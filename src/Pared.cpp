@@ -39,9 +39,9 @@ void Pared::setPos(float x1, float y1, float x2, float y2)
 	limite2.y=y2;
 }
 //Calculo de distancia de una pared a un punto, adicionalmente
-//se modifica el valor de un vector direccion opcional que contendrá
+//se modifica el valor de un vector direccion opcional que contendrï¿½
 //el vector unitario saliente que indica la direccion de la 
-//recta más corta entre el punto y la pared.
+//recta mï¿½s corta entre el punto y la pared.
 float Pared::distancia(Vector2D punto, Vector2D *direccion)
 {
 	Vector2D u=(punto-limite1);
@@ -51,14 +51,18 @@ float Pared::distancia(Vector2D punto, Vector2D *direccion)
 	float valor=u*v;
 	float distancia=0;
 
-	if(valor<0)
+	if(valor<0)	{
 		dir=u;
-	else if(valor>longitud)
+	}
+	else if(valor>longitud)	{
 		dir=(punto-limite2);
-	else
-		dir=u-v*valor;
-	distancia=dir.modulo();
-	if(direccion!=0) //si nos dan un vector…
+	}	
+	else {
+		Vector2D aux = v * valor;
+		dir = u - aux;
+	}
+	distancia = dir.modulo();
+	if(direccion!=0) //si nos dan un vector
 		*direccion=dir.unitario();
 	return distancia;
 }

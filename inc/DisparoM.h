@@ -1,5 +1,5 @@
 #pragma once
-#include "disparo.h"
+#include "Disparo.h"
 class DisparoM :
 	public Disparo
 {

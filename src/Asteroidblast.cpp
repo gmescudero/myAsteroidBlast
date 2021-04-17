@@ -57,7 +57,7 @@ void onDraw(void)
 }
 void onKeyboardDown(unsigned char key, int x_t, int y_t)
 {
-	//poner aqui el código de teclado
+	//poner aqui el cï¿½digo de teclado
 	mundo.tecla(key);
 
 	glutPostRedisplay();
@@ -68,7 +68,7 @@ void onSpecialKeyboardDown(int key, int x, int y)
 }
 void onTimer(int value)
 {
-//poner aqui el código de animacion
+//poner aqui el cï¿½digo de animacion
 	mundo.mueve();
 
 	//no borrar estas lineas

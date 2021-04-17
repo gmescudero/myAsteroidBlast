@@ -7,7 +7,7 @@
 #include "ListaDisparos.h"
 #include <ctime>
 #include "ObjetoMovil.h"
-#include "ETSIDI.h"
+#include "PrintText.h"
 #include <iostream>
 #include <string>
 
@@ -65,10 +65,10 @@ void Mundo::dibuja()
 	std::string s = std::to_string(vida.getPunt());
 	char const *pchar = s.c_str();
 
-	ETSIDI::setTextColor(1,1,1);
-	ETSIDI::setFont("fuentes/Bitwise.ttf",20);
-	ETSIDI::printxy("Puntuacion",-14,6);
-	ETSIDI::printxy(pchar, -7, 6);
+	PrintText::setTextColor(1,1,1);
+	PrintText::setFont("fuentes/Bitwise.ttf",20);
+	PrintText::printxy("Puntuacion",-14,6);
+	PrintText::printxy(pchar, -7, 6);
 
 }
 

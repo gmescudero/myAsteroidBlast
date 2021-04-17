@@ -1,5 +1,5 @@
 #include "Coordinador.h"
-#include "ETSIDI.h"
+#include "PrintText.h"
 #include "Vidas.h"
 
 
@@ -15,34 +15,32 @@ CCoordinador::~CCoordinador(void)
 
 
 void CCoordinador::dibuja() {
-	if(estado==INICIO)
- {
-	 gluLookAt(0, 7.5, 30, // posicion del ojo
-	 0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
-	 0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
-	 ETSIDI::setTextColor(1,1,0);
-	 ETSIDI::setFont("fuentes/Bitwise.ttf",16);
-	ETSIDI::printxy("Asteroid", -5,8);
-	ETSIDI::setTextColor(1,1,1);
-	ETSIDI::setFont("fuentes/Bitwise.ttf",12);
-	ETSIDI::printxy("PULSE LA TECLA -E- PARA EMPEZAR", -5,7); 
-	ETSIDI::printxy("Moreno y Gonzalez",2,1);
-	} else if(estado==JUEGO){
- mundo.dibuja();
- }
- else if(estado==GAMEOVER)
- {
- gluLookAt(0, 7.5, 30, // posicion del ojo
-	 0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
-	 0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
- ETSIDI::setTextColor(1,0,0);
- ETSIDI::setFont("fuentes/Bitwise.ttf",16);
- ETSIDI::printxy("GAMEOVER: Has perdido",-5,10);
- ETSIDI::printxy("Pulsa -C- para continuar",-5,5);
- }
- 
+	if(estado == INICIO)
+    {
+        gluLookAt(  0.0, 7.5, 30.0, // posicion del ojo
+                    0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+                    0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+        PrintText::setTextColor(1,1,0);
+        PrintText::setFont("fuentes/Bitwise.ttf",16);
+        PrintText::printxy("Asteroid", -5,8);
+        PrintText::setTextColor(1,1,1);
+        PrintText::setFont("fuentes/Bitwise.ttf",12);
+        PrintText::printxy("PULSE LA TECLA -E- PARA EMPEZAR", -5,7); 
+        PrintText::printxy("Moreno y Gonzalez",2,1);
+    } else if(estado==JUEGO){
+        mundo.dibuja();
+    }
+    else if(estado==GAMEOVER)
+    {
+        gluLookAt(  0.0, 7.5, 30.0, // posicion del ojo
+                    0.0, 7.5, 0.0, // hacia que punto mira (0,7.5,0)
+                    0.0, 1.0, 0.0); // definimos hacia arriba (eje Y)
+        PrintText::setTextColor(1,0,0);
+        PrintText::setFont("fuentes/Bitwise.ttf",16);
+        PrintText::printxy("GAMEOVER: Has perdido",-5,10);
+        PrintText::printxy("Pulsa -C- para continuar",-5,5);
+    }
 } 
-
 
 
 void CCoordinador::teclaEspecial(unsigned char key)

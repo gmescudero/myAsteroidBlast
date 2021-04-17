@@ -1,5 +1,5 @@
 
-#define USE_ETSIDI
+//#define USE_ETSIDI
 #pragma comment(lib,"ETSIDI.lib")
 //Cabecera Publica de ETSIDI. GENERADA AUTOMATICAMENTE
 //#ifdef _DEBUG
@@ -26,7 +26,9 @@ AUTHOR: Miguel Hernando
 ****************************************************************************/
 
 #pragma once
+#if defined(_WIN32)
 #include <windows.h>
+#endif
 #include <GL/gl.h>              /* Header File For The OpenGL Library */
 #include <GL/glu.h>
 #include <cmath>
@@ -100,7 +102,7 @@ using namespace std;
     
 	};
 	//CLASE SPRITE------------------------------------------------------------
-	//un rectangulo con textura que facilita el dibujo y animación en pantalla
+	//un rectangulo con textura que facilita el dibujo y animaciï¿½n en pantalla
 	class Sprite
 	{
 	public:
@@ -134,7 +136,7 @@ using namespace std;
 		char _texturePath[255];
 	};
 	//CLASE SPRITESEQUENCE------------------------------------------------------------
-	//un sprite con una secuencia de imagenes que hacen una animación.
+	//un sprite con una secuencia de imagenes que hacen una animaciï¿½n.
 	class SpriteSequence: public Sprite
 	{
 	public:
